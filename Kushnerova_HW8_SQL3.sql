@@ -16,7 +16,7 @@ select employee_name, monthly_salary
 	from 
 	employees 
 	inner join employee_salary on employee_salary.employee_id = employees.id
-    inner join salary on salary.id=employee_salary.salary_id;
+        inner join salary on salary.id=employee_salary.salary_id;
 
 
 -- 2. Вывести всех работников у которых ЗП меньше 2000.
@@ -25,8 +25,8 @@ select employee_name, monthly_salary
 	from 
 	employees 
 	inner join employee_salary on employee_salary.employee_id = employees.id
-    inner join salary on salary.id=employee_salary.salary_id
-    where monthly_salary<2000;
+        inner join salary on salary.id=employee_salary.salary_id
+        where monthly_salary<2000;
    
  --3. Вывести все зарплатные позиции, но работник по ним не назначен. (ЗП есть, но не понятно кто её получает.)
 
@@ -34,8 +34,8 @@ select employee_name, monthly_salary
 	from 
 	employees 
 	right join employee_salary on employee_salary.employee_id = employees.id
-    right join salary on salary.id=employee_salary.salary_id
-    where employee_name is null;
+        right join salary on salary.id=employee_salary.salary_id
+        where employee_name is null;
    
    
  --4. Вывести все зарплатные позиции  меньше 2000 но работник по ним не назначен. (ЗП есть, но не понятно кто её получает.)
@@ -44,8 +44,8 @@ select employee_name, monthly_salary
 	from 
 	employees 
 	right join employee_salary on employee_salary.employee_id = employees.id
-    right join salary on salary.id=employee_salary.salary_id
-    where employee_name is null and monthly_salary <2000;
+        right join salary on salary.id=employee_salary.salary_id
+        where employee_name is null and monthly_salary <2000;
    
  --5. Найти всех работников кому не начислена ЗП.
 
@@ -53,8 +53,8 @@ select employee_name, monthly_salary
 	from 
 	employees 
 	left join employee_salary on employee_salary.employee_id = employees.id
-    left join salary on salary.id=employee_salary.salary_id
-    where monthly_salary is null;
+        left join salary on salary.id=employee_salary.salary_id
+        where monthly_salary is null;
    
  --6. Вывести всех работников с названиями их должности.
 
